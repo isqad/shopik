@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Шопик</title>
+    <style>
+    .red {
+      color: #FF0000;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <!-- Не использовать в проде -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script type="text/babel">
+      const App = () => {
+        return (
+          <React.Fragment>
+            <News />
+            <Comment />
+          </React.Fragment>
+        )
+      }
+
+      class News extends React.Component {
+        render() {
+          return (
+            <p>К сожалению, новостей нет</p>
+          )
+        }
+      }
+
+      class Comment extends React.Component {
+        render() {
+          return (
+            <p>Нет новостей - комментировать нечего</p>
+          )
+        }
+      }
+
+      ReactDOM.render(
+        <App />,
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>
